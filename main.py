@@ -34,6 +34,11 @@ def after_loaded():
 	DEBUG = SETTINGS.get("debug")
 	if DEBUG:
 		api.enable_debugging()
+
+		utils.log("hostname: {}\n\tport: {}\n\theartbeat_freq: {}\n\tbucket_name: {}\n\tdebug: {}".format(
+			SETTINGS.get("hostname"), SETTINGS.get("port"),
+			SETTINGS.get("heartbeat_freq"), SETTINGS.get("bucket_name"),
+			SETTINGS.get("debug")))
 		utils.log("Connected? {}".format(CONNECTED))
 
 
@@ -81,13 +86,6 @@ def handle_activity(view):
 		"language": get_language(view),
 	}
 	api.heartbeat(SETTINGS.get("bucket_name"), event_data)
-
-
-if DEBUG:
-	utils.log("hostname: {}\n\tport: {}\n\theartbeat_freq: {}\n\tbucket_name: {}\n\tdebug: {}".format(
-		SETTINGS.get("hostname"), SETTINGS.get("port"),
-		SETTINGS.get("heartbeat_freq"), SETTINGS.get("bucket_name"),
-		SETTINGS.get("debug")))
 
 
 class ActivityWatchListener(sublime_plugin.EventListener):
