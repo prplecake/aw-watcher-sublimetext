@@ -16,3 +16,5 @@ Sublime Text 3 Packages directory.
 
 Navigate to **Preferences -> Browse Packages** to find out where your
 Packages directory is.
+
+[releases]:https://git.jrgnsn.net/matthew/aw-watcher-sublimetext/releases
