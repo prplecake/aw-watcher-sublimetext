@@ -6,7 +6,7 @@ from .activitywatch import utils
 
 # globals
 CLIENT_ID = "aw-watcher-sublimetext"
-SETTINGS_FILE = "aw-watcher-sublimetext.sublime-settings"
+SETTINGS_FILE = "aw-watcher.sublime-settings"
 SETTINGS = {}
 DEBUG = False
 CONNECTED = False

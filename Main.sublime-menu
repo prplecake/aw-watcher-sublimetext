@@ -18,7 +18,7 @@
 							{
 								"command": "edit_settings",
 								"args": {
-									"base_file": "${packages}/aw-watcher-sublimetext/aw-watcher-sublimetext.sublime-settings"
+									"base_file": "${packages}/aw-watcher-sublimetext/aw-watcher.sublime-settings"
 								},
 								"caption": "Settings"
 							},
