@@ -64,7 +64,10 @@ def get_project_name(view):
 
 
 def get_language(view):
-	point = view.sel()[0].begin()
+	try:
+		point = view.sel()[0].begin()
+	except IndexError:
+		return
 	scopes = view.scope_name(point).strip().split(" ")
 	return scopes[0]
 
