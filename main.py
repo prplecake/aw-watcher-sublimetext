@@ -1,3 +1,4 @@
+import os
 import sublime
 import sublime_plugin
 
@@ -49,6 +50,7 @@ def get_file_name(view):
 def get_project_name(view):
 	window = view.window()
 	project = "unknown"
+
 	if hasattr(window, "project_data"):
 		project = window.project_data()
 	if not project:
@@ -74,6 +76,10 @@ def get_language(view):
 		utils.log("scopes: {}".format(scopes))
 	return scopes[0]
 
+def correct_slashes(path):
+	if DEBUG:
+		utils.log("correct_slashes() called")
+	return path.replace("\\", "/").replace("C:","/C")
 
 def handle_activity(view):
 	if DEBUG:
@@ -89,8 +95,8 @@ def handle_activity(view):
 					"[aw-watcher-sublimetext] Could not connect "
 					"to aw-server")
 	event_data = {
-		"file": get_file_name(view),
-		"project": get_project_name(view),
+		"file": correct_slashes(get_file_name(view)),
+		"project": correct_slashes(get_project_name(view)),
 		"language": get_language(view),
 	}
 	if DEBUG:
