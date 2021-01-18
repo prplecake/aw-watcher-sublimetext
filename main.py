@@ -65,6 +65,7 @@ def get_project_name(view):
 		utils.log("project: {}".format(project))
 	return project
 
+
 def get_language(view):
 	try:
 		point = view.sel()[0].begin()
@@ -75,10 +76,12 @@ def get_language(view):
 		utils.log("scopes: {}".format(scopes))
 	return scopes[0]
 
+
 def correct_slashes(path):
 	if DEBUG:
 		utils.log("correct_slashes() called")
-	return path.replace("\\", "/").replace("C:","/C")
+	return path.replace("\\", "/").replace("C:", "/C")
+
 
 def handle_activity(view):
 	if DEBUG:
