@@ -85,6 +85,11 @@ def handle_activity(view):
 		"project": get_project_name(view),
 		"language": get_language(view),
 	}
+	if DEBUG:
+		utils.log("file: {}\n\tproject: {}\n\tlanguage: {}".format(
+			event_data["file"],
+			event_data["project"],
+			event_data["language"]))
 	api.heartbeat(SETTINGS.get("bucket_name"), event_data)
 
 
