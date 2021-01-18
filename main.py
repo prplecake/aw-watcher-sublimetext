@@ -51,6 +51,8 @@ def get_project_name(view):
 	project = "unknown"
 	if hasattr(window, "project_data"):
 		project = window.project_data()
+	if not project:
+		project = "unknown"
 	if "name" in project:
 		project = project.get("name")
 	elif "folders" in project:
