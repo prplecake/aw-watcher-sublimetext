@@ -60,8 +60,9 @@ def get_project_name(view):
 			if get_file_name(view).startswith(folder.get("path")):
 				project = folder.get("path")
 				break
+	if DEBUG:
+		utils.log("project: {}".format(project))
 	return project
-
 
 def get_language(view):
 	try:
@@ -69,6 +70,8 @@ def get_language(view):
 	except IndexError:
 		return
 	scopes = view.scope_name(point).strip().split(" ")
+	if DEBUG:
+		utils.log("scopes: {}".format(scopes))
 	return scopes[0]
 
 
