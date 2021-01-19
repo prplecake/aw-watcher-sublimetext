@@ -1,0 +1,49 @@
+name: Issue Autoresponse
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: athorp96/sourcehut_issue_mirror@master
+      with:
+        title: ${{ github.event.issue.title }}
+        body: ${{ github.event.issue.body }}
+        submitter: ${{ github.event.issue.user.login }}
+        tracker-owner: "~mjorgensen"
+        tracker-name: "aw-watcher-sublimetext"
+        oath-token: ${{ secrets.SRHT_OAUTH_TOKEN }}
+        label: ${{ github.event.repository.name }}
+
+  label_mirrored:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: Naturalclar/issue-action@v1.0.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        keywords: '["${{ github.event.issue.body }}"]' # Try and use body as keyword
+        labels: '["mirrored","ready-to-close"]'
+
+  auto-response:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: derekprior/add-autoresponse@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          respondableId: ${{ github.event.issue.node_id }}
+          response: "Hello! Thank you for your interest in my project.\nThis issue has been mirrored on sourcehut. Feel free to check it out [here!](https://todo.sr.ht/~mjorgensen/aw-watcher-sublimetext)\nThanks!"
+          author: ${{ github.event.issue.user.login }}
+
+  close-issue:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@master
+      - name: issue-closure
+        uses: bdougie/close-issue-based-on-label@master
+        env:
+          LABEL: ready-to-close
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
