@@ -16,7 +16,7 @@ jobs:
         tracker-owner: "~mjorgensen"
         tracker-name: "aw-watcher-sublimetext"
         oauth-token: ${{ secrets.SRHT_OAUTH_TOKEN }}
-        label: ${{ github.event.repository.name }}
+        label: "mirrored-from-github"
 
   label_mirrored:
     runs-on: [ubuntu-latest]
