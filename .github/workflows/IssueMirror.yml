@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: issue-closure
-        uses: bdougie/close-issue-based-on-label@master
+        uses: bdougie/close-issues-based-on-label@master
         env:
           LABEL: ready-to-close
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
