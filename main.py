@@ -63,7 +63,7 @@ def get_project_name(view):
 				break
 	if DEBUG:
 		utils.log("project: {}".format(project))
-	return project
+	return str(project)
 
 
 def get_language(view):
