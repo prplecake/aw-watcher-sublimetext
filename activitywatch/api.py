@@ -7,7 +7,7 @@ from . import utils
 
 
 class ActivityWatchAPI(object):
-	_last_heartbeat = datetime.now()
+	_last_heartbeat = datetime.utcnow()
 	debug = False
 	url = None
 
