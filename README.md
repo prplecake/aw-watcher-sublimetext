@@ -21,6 +21,7 @@ aw-watcher-sublimetext and the old aw-watcher-sublime.
 
 * File paths all follow Unix-style conventions. Forward slashes, et al.
 * Configuration is loaded and available at plugin initialization.
+* Uses UTC timestamps instead of localized timestamps. 
 
 ## Installation
 
