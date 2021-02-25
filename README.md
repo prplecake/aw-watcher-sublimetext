@@ -33,3 +33,19 @@ Navigate to **Preferences -> Browse Packages** to find out where your
 Packages directory is.
 
 [releases]:https://git.sr.ht/~mjorgensen/aw-watcher-sublimetext/refs
+
+## Resources
+
+Documentation, once it exists, [can be found here][man]. 
+
+Discussion and patches are welcome to my [public inbox][public-inbox]:
+~mjorgensen/public-inbox@lists.sr.ht. Please use `--subject prefix PATCH
+aw-watcher-sublimetext` for clarity when sending patches.
+
+Bugs, issues, planning, and tasks can all be found at the tracker: 
+[~mjorgensen/aw-watcher-sublimetext][todo]. Any issues opened on GitHub
+will be mirrored to the sourcehut tracker and closed on GitHub.
+
+[man]:https://man.sr.ht/~mjorgensen/aw-watcher-sublimetext
+[public-inbox]:https://lists.sr.ht/~mjorgensen/public-inbox
+[todo]:https://todo.sr.ht/~mjorgensen/aw-watcher-sublimetext
