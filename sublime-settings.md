@@ -8,35 +8,35 @@ configure those settings for the Sublime Text 3 watcher.
 Simply navigate to **Preferences -> Package Settings -> aw-watcher ->
 Settings** and you'll be able to override the default settings.
 
-## Settings
+# Settings
 
-### `hostname`
+## `hostname`
 
 Type: string
 
 The hostname for your ActivityWatch server, usually `localhost`.
 
-### `port`
+## `port`
 
 Type: integer
 
 The port for your ActivityWatch server, usually `5600`.
 
-### `heartbeat_frequency`
+## `heartbeat_frequency`
 
 Type: integer
 
 The frequecy of heartbeats you'd wish to send to your ActivityWatch
 server. Default: `10`.
 
-### `bucket_name`
+## `bucket_name`
 
 Type: string
 
 The name of the bucket you wish data to be added to. Default:
 `aw-watcher-sublimetext`.
 
-### `debug`
+## `debug`
 
 Type: boolean
 
