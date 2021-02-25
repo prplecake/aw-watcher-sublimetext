@@ -36,7 +36,7 @@ Packages directory is.
 
 ## Resources
 
-Documentation, once it exists, [can be found here][man]. 
+Documentation [can be found here][man]. 
 
 Discussion and patches are welcome to my [public inbox][public-inbox]:
 ~mjorgensen/public-inbox@lists.sr.ht. Please use `--subject prefix PATCH
