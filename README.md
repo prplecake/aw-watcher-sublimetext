@@ -1,5 +1,11 @@
 # aw-watcher-sublimetext
 
+**NOTE:** If you're viewing this repository on GitHub, the repo itself
+may be out of date. To view the latest changes, [view the repository on
+Sourcehut][sr.ht].
+
+[sr.ht]:https://sr.ht/~mjorgensen/aw-watcher-sublimetext
+
 [Sublime Text 3][st3] plugin that acts as a watcher for
 [Activity Watch][activity-watch]. It tracks files, languages, and
 projects.
