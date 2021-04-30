@@ -1,5 +1,7 @@
 - Kostas Dizas
 - Matthew Jorgensen
 
-Community Contributors:
+## Community Contributors
+
+- Jan Tojnar
 - Muhammad Fahmi Amir
