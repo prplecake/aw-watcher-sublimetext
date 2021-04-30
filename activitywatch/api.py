@@ -1,13 +1,13 @@
 import json
 import socket
 import requests
-from datetime import datetime
+from datetime import datetime, timezone
 
 from . import utils
 
 
 class ActivityWatchAPI(object):
-	_last_heartbeat = datetime.utcnow()
+	_last_heartbeat = datetime.now(timezone.utc)
 	debug = False
 	url = None
 
@@ -82,7 +82,7 @@ class ActivityWatchAPI(object):
 		return json.loads(resp.text)
 
 	def heartbeat(self, bucket_id, event_data, pulsetime=30):
-		now = datetime.utcnow()
+		now = datetime.now(timezone.utc)
 		if self.debug:
 			utils.log("now: {}\n\tnow.isoformat(): {}".format(
 				now, now.isoformat()))
