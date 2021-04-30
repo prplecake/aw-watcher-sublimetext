@@ -83,9 +83,6 @@ class ActivityWatchAPI(object):
 
 	def heartbeat(self, bucket_id, event_data, pulsetime=30):
 		now = datetime.now(timezone.utc)
-		if self.debug:
-			utils.log("now: {}\n\tnow.isoformat(): {}".format(
-				now, now.isoformat()))
 
 		if not self._rate_limited(now):
 			return
